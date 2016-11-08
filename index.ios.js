@@ -1,9 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+import FriendsList from './FriendsList';
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,42 +7,32 @@ import {
   View
 } from 'react-native';
 
-export default class ReactNativeWeb extends Component {
+
+const friends = [
+  {
+    id: 1,
+    firstName: 'Jane',
+    lastName: 'Miller',
+    avatarUrl: 'https://placehold.it/100x100',
+  },
+  {
+    id: 2,
+    firstName: 'Kate',
+    lastName: 'Smith',
+    avatarUrl: 'https://placehold.it/100x100',
+  },
+  {
+    id: 3,
+    firstName: 'Kevin',
+    lastName: 'Yang',
+    avatarUrl: 'https://placehold.it/100x100',
+  },
+];
+
+class ReactNativeWeb extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native for the web !
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
+    return <FriendsList friends={friends} />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('ReactNativeWeb', () => ReactNativeWeb);
